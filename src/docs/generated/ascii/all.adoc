@@ -1,0 +1,1121 @@
+= API文档
+
+
+[[_overview]]
+== 概览
+采用swagger2
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : 1.0
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : localhost:8084
+__基础路径__ : /budgetctl
+
+
+=== 标签
+
+* 业务申请接口 : Inter Apply Controller
+* 预算占用接口 : Bc Budget Occupy Controller
+
+
+
+
+[[_paths]]
+== 资源
+
+[[_85b1799ce10d450fffa22b8f50356911]]
+=== 业务申请接口
+Inter Apply Controller
+
+
+[[_acceptbizapplyusingpost_1]]
+==== 接收费控等系统的业务申请
+....
+POST /bizEndPoint/bizApply
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**bizApplication** +
+__必填__|业务申请单 合同等|<<_interapplicationdto,InterApplicationDTO>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_responseentity,ResponseEntity>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/bizEndPoint/bizApply
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "applyDate" : "string",
+  "applyMoney" : 0.0,
+  "applyName" : "string",
+  "applyNo" : "string",
+  "billTypeCode" : "string",
+  "bizApplicationDetailList" : [ {
+    "applyDate" : "string",
+    "applyDetailNo" : "string",
+    "applyId" : 0,
+    "applyNo" : "string",
+    "billTypeCode" : "string",
+    "budgetComCode" : "string",
+    "budgetItemOne" : "string",
+    "budgetItemTwo" : "string",
+    "budgetOrgCode" : "string",
+    "budgetSubjectCode" : "string",
+    "budgetSubjectLevel" : "string",
+    "budgetTypeCode" : "string",
+    "businessSystemCode" : "string",
+    "cashFlowCode" : "string",
+    "checked" : true,
+    "children" : [ {
+      "applyDate" : "string",
+      "applyDetailNo" : "string",
+      "applyId" : 0,
+      "applyNo" : "string",
+      "billTypeCode" : "string",
+      "budgetComCode" : "string",
+      "budgetItemOne" : "string",
+      "budgetItemTwo" : "string",
+      "budgetOrgCode" : "string",
+      "budgetSubjectCode" : "string",
+      "budgetSubjectLevel" : "string",
+      "budgetTypeCode" : "string",
+      "businessSystemCode" : "string",
+      "cashFlowCode" : "string",
+      "checked" : true,
+      "children" : [ "..." ],
+      "currency" : "string",
+      "customerId" : "string",
+      "decimalSegment1" : 0.0,
+      "decimalSegment2" : 0.0,
+      "decimalSegment3" : 0.0,
+      "decimalSegment4" : 0.0,
+      "decimalSegment5" : 0.0,
+      "expenseComCode" : "string",
+      "expenseOrgCode" : "string",
+      "freedomDimension" : "string",
+      "id" : 0,
+      "invoCode" : "string",
+      "invoNo" : "string",
+      "isUniteOrgCode" : 0,
+      "loginId" : "string",
+      "operationCode" : "string",
+      "pageNum" : 0,
+      "pageSize" : 0,
+      "payBankCount" : "string",
+      "priceMoney" : 0.0,
+      "productLineId" : "string",
+      "projectNo" : "string",
+      "projectType" : "string",
+      "remark" : "string",
+      "state" : "string",
+      "taxMoney" : 0.0,
+      "textSegment1" : "string",
+      "textSegment2" : "string",
+      "textSegment3" : "string",
+      "textSegment4" : "string",
+      "textSegment5" : "string",
+      "total" : 0,
+      "totalMoney" : 0.0,
+      "vendorId" : "string",
+      "wapplyDetailNo" : "string",
+      "wapplyNo" : "string",
+      "wbillTypeCode" : "string",
+      "wbusinessSystemCode" : "string",
+      "wexpenseTypeCode" : "string",
+      "withholdingAdjustTerms" : 0,
+      "withholdingStartDate" : "string",
+      "withholdingTerms" : 0,
+      "withholdingTotalAdjustMoney" : 0.0,
+      "withholdingTotalMoney" : 0.0
+    } ],
+    "currency" : "string",
+    "customerId" : "string",
+    "decimalSegment1" : 0.0,
+    "decimalSegment2" : 0.0,
+    "decimalSegment3" : 0.0,
+    "decimalSegment4" : 0.0,
+    "decimalSegment5" : 0.0,
+    "expenseComCode" : "string",
+    "expenseOrgCode" : "string",
+    "freedomDimension" : "string",
+    "id" : 0,
+    "invoCode" : "string",
+    "invoNo" : "string",
+    "isUniteOrgCode" : 0,
+    "loginId" : "string",
+    "operationCode" : "string",
+    "pageNum" : 0,
+    "pageSize" : 0,
+    "payBankCount" : "string",
+    "priceMoney" : 0.0,
+    "productLineId" : "string",
+    "projectNo" : "string",
+    "projectType" : "string",
+    "remark" : "string",
+    "state" : "string",
+    "taxMoney" : 0.0,
+    "textSegment1" : "string",
+    "textSegment2" : "string",
+    "textSegment3" : "string",
+    "textSegment4" : "string",
+    "textSegment5" : "string",
+    "total" : 0,
+    "totalMoney" : 0.0,
+    "vendorId" : "string",
+    "wapplyDetailNo" : "string",
+    "wapplyNo" : "string",
+    "wbillTypeCode" : "string",
+    "wbusinessSystemCode" : "string",
+    "wexpenseTypeCode" : "string",
+    "withholdingAdjustTerms" : 0,
+    "withholdingStartDate" : "string",
+    "withholdingTerms" : 0,
+    "withholdingTotalAdjustMoney" : 0.0,
+    "withholdingTotalMoney" : 0.0
+  } ],
+  "bizApplicationPayeeList" : [ {
+    "applyId" : 0,
+    "checked" : true,
+    "children" : [ {
+      "applyId" : 0,
+      "checked" : true,
+      "children" : [ "..." ],
+      "loginId" : "string",
+      "pageNum" : 0,
+      "pageSize" : 0,
+      "payeeAccountName" : "string",
+      "payeeBankAccount" : "string",
+      "payeeBankCode" : "string",
+      "payeeMoney" : 0.0,
+      "state" : "string",
+      "total" : 0
+    } ],
+    "loginId" : "string",
+    "pageNum" : 0,
+    "pageSize" : 0,
+    "payeeAccountName" : "string",
+    "payeeBankAccount" : "string",
+    "payeeBankCode" : "string",
+    "payeeMoney" : 0.0,
+    "state" : "string",
+    "total" : 0
+  } ],
+  "businessSystemCode" : "string",
+  "checked" : true,
+  "children" : [ {
+    "applyDate" : "string",
+    "applyMoney" : 0.0,
+    "applyName" : "string",
+    "applyNo" : "string",
+    "billTypeCode" : "string",
+    "bizApplicationDetailList" : [ {
+      "applyDate" : "string",
+      "applyDetailNo" : "string",
+      "applyId" : 0,
+      "applyNo" : "string",
+      "billTypeCode" : "string",
+      "budgetComCode" : "string",
+      "budgetItemOne" : "string",
+      "budgetItemTwo" : "string",
+      "budgetOrgCode" : "string",
+      "budgetSubjectCode" : "string",
+      "budgetSubjectLevel" : "string",
+      "budgetTypeCode" : "string",
+      "businessSystemCode" : "string",
+      "cashFlowCode" : "string",
+      "checked" : true,
+      "children" : [ "..." ],
+      "currency" : "string",
+      "customerId" : "string",
+      "decimalSegment1" : 0.0,
+      "decimalSegment2" : 0.0,
+      "decimalSegment3" : 0.0,
+      "decimalSegment4" : 0.0,
+      "decimalSegment5" : 0.0,
+      "expenseComCode" : "string",
+      "expenseOrgCode" : "string",
+      "freedomDimension" : "string",
+      "id" : 0,
+      "invoCode" : "string",
+      "invoNo" : "string",
+      "isUniteOrgCode" : 0,
+      "loginId" : "string",
+      "operationCode" : "string",
+      "pageNum" : 0,
+      "pageSize" : 0,
+      "payBankCount" : "string",
+      "priceMoney" : 0.0,
+      "productLineId" : "string",
+      "projectNo" : "string",
+      "projectType" : "string",
+      "remark" : "string",
+      "state" : "string",
+      "taxMoney" : 0.0,
+      "textSegment1" : "string",
+      "textSegment2" : "string",
+      "textSegment3" : "string",
+      "textSegment4" : "string",
+      "textSegment5" : "string",
+      "total" : 0,
+      "totalMoney" : 0.0,
+      "vendorId" : "string",
+      "wapplyDetailNo" : "string",
+      "wapplyNo" : "string",
+      "wbillTypeCode" : "string",
+      "wbusinessSystemCode" : "string",
+      "wexpenseTypeCode" : "string",
+      "withholdingAdjustTerms" : 0,
+      "withholdingStartDate" : "string",
+      "withholdingTerms" : 0,
+      "withholdingTotalAdjustMoney" : 0.0,
+      "withholdingTotalMoney" : 0.0
+    } ],
+    "bizApplicationPayeeList" : [ {
+      "applyId" : 0,
+      "checked" : true,
+      "children" : [ "..." ],
+      "loginId" : "string",
+      "pageNum" : 0,
+      "pageSize" : 0,
+      "payeeAccountName" : "string",
+      "payeeBankAccount" : "string",
+      "payeeBankCode" : "string",
+      "payeeMoney" : 0.0,
+      "state" : "string",
+      "total" : 0
+    } ],
+    "businessSystemCode" : "string",
+    "checked" : true,
+    "children" : [ "..." ],
+    "comCode" : "string",
+    "expectPaymentDate" : "string",
+    "expenseTypeCode" : "string",
+    "id" : 0,
+    "isAmortization" : 0,
+    "isWithholding" : 0,
+    "loginId" : "string",
+    "operationCode" : "string",
+    "orgCode" : "string",
+    "pageNum" : 0,
+    "pageSize" : 0,
+    "payMoney" : 0.0,
+    "reMoney" : 0.0,
+    "remark" : "string",
+    "staffId" : "string",
+    "state" : "string",
+    "status" : 0,
+    "total" : 0
+  } ],
+  "comCode" : "string",
+  "expectPaymentDate" : "string",
+  "expenseTypeCode" : "string",
+  "id" : 0,
+  "isAmortization" : 0,
+  "isWithholding" : 0,
+  "loginId" : "string",
+  "operationCode" : "string",
+  "orgCode" : "string",
+  "pageNum" : 0,
+  "pageSize" : 0,
+  "payMoney" : 0.0,
+  "reMoney" : 0.0,
+  "remark" : "string",
+  "staffId" : "string",
+  "state" : "string",
+  "status" : 0,
+  "total" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "body" : "object",
+  "statusCode" : "string",
+  "statusCodeValue" : 0
+}
+----
+
+
+[[_dce5484aca4918b85cd78e9bf6f0fda5]]
+=== 预算占用接口
+Bc Budget Occupy Controller
+
+
+[[_acceptbizapplyusingpost]]
+==== 接收预算占用、释放申请
+....
+POST /budgetOccupyEndPoint/budgetOccupy
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**budgetOccupyPkg** +
+__必填__|预算占用、释放申请等|<<_budgetoccupypkgdto,BudgetOccupyPkgDTO>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_responseentity,ResponseEntity>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/budgetOccupyEndPoint/budgetOccupy
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "applyDate" : "string",
+  "applyId" : 0,
+  "billTypeCode" : "string",
+  "budgetOccupyList" : [ {
+    "accItemCode" : "string",
+    "applyDetailId" : 0,
+    "applyId" : 0,
+    "applyState" : 0,
+    "batchNo" : "string",
+    "billTypeCode" : "string",
+    "budgetComCode" : "string",
+    "budgetCycleCode" : "string",
+    "budgetItemOne" : "string",
+    "budgetItemTwo" : "string",
+    "budgetOrgCode" : "string",
+    "budgetSubjectCode" : "string",
+    "budgetSubjectLevel" : "string",
+    "budgetTypeCode" : "string",
+    "budgetTypeName" : "string",
+    "businessSystemCode" : "string",
+    "checkBudgetMoney" : 0.0,
+    "checked" : true,
+    "children" : [ {
+      "accItemCode" : "string",
+      "applyDetailId" : 0,
+      "applyId" : 0,
+      "applyState" : 0,
+      "batchNo" : "string",
+      "billTypeCode" : "string",
+      "budgetComCode" : "string",
+      "budgetCycleCode" : "string",
+      "budgetItemOne" : "string",
+      "budgetItemTwo" : "string",
+      "budgetOrgCode" : "string",
+      "budgetSubjectCode" : "string",
+      "budgetSubjectLevel" : "string",
+      "budgetTypeCode" : "string",
+      "budgetTypeName" : "string",
+      "businessSystemCode" : "string",
+      "checkBudgetMoney" : 0.0,
+      "checked" : true,
+      "children" : [ "..." ],
+      "createBy" : "string",
+      "expenseComCode" : "string",
+      "expenseOrgCode" : "string",
+      "expenseTypeCode" : "string",
+      "groupCode" : "string",
+      "isExempt" : 0,
+      "isGroupOccupy" : 0,
+      "isUniteOrgCode" : 0,
+      "loginId" : "string",
+      "occupyAccountDate" : "yyyy-MM-dd",
+      "occupyApprovalDate" : "yyyy-MM-dd",
+      "occupyBudgetMoney" : 0.0,
+      "occupyBudgetMonth" : "string",
+      "occupyStatus" : 0,
+      "occupySubmitDate" : "yyyy-MM-dd",
+      "occupyWithholdDate" : "yyyy-MM-dd",
+      "pageNum" : 0,
+      "pageSize" : 0,
+      "payBudgetMoney" : 0.0,
+      "projectNo" : "string",
+      "state" : "string",
+      "total" : 0,
+      "transactionDate" : "yyyy-MM-dd",
+      "transactionMonth" : "string",
+      "wapplyDetailId" : "string",
+      "wapplyId" : "string",
+      "wbillTypeCode" : "string",
+      "wbusinessSystemCode" : "string",
+      "wexpenseTypeCode" : "string",
+      "withholdBudgetMoney" : 0.0
+    } ],
+    "createBy" : "string",
+    "expenseComCode" : "string",
+    "expenseOrgCode" : "string",
+    "expenseTypeCode" : "string",
+    "groupCode" : "string",
+    "isExempt" : 0,
+    "isGroupOccupy" : 0,
+    "isUniteOrgCode" : 0,
+    "loginId" : "string",
+    "occupyAccountDate" : "yyyy-MM-dd",
+    "occupyApprovalDate" : "yyyy-MM-dd",
+    "occupyBudgetMoney" : 0.0,
+    "occupyBudgetMonth" : "string",
+    "occupyStatus" : 0,
+    "occupySubmitDate" : "yyyy-MM-dd",
+    "occupyWithholdDate" : "yyyy-MM-dd",
+    "pageNum" : 0,
+    "pageSize" : 0,
+    "payBudgetMoney" : 0.0,
+    "projectNo" : "string",
+    "state" : "string",
+    "total" : 0,
+    "transactionDate" : "yyyy-MM-dd",
+    "transactionMonth" : "string",
+    "wapplyDetailId" : "string",
+    "wapplyId" : "string",
+    "wbillTypeCode" : "string",
+    "wbusinessSystemCode" : "string",
+    "wexpenseTypeCode" : "string",
+    "withholdBudgetMoney" : 0.0
+  } ],
+  "businessSystemCode" : "string",
+  "checked" : true,
+  "children" : [ {
+    "applyDate" : "string",
+    "applyId" : 0,
+    "billTypeCode" : "string",
+    "budgetOccupyList" : [ {
+      "accItemCode" : "string",
+      "applyDetailId" : 0,
+      "applyId" : 0,
+      "applyState" : 0,
+      "batchNo" : "string",
+      "billTypeCode" : "string",
+      "budgetComCode" : "string",
+      "budgetCycleCode" : "string",
+      "budgetItemOne" : "string",
+      "budgetItemTwo" : "string",
+      "budgetOrgCode" : "string",
+      "budgetSubjectCode" : "string",
+      "budgetSubjectLevel" : "string",
+      "budgetTypeCode" : "string",
+      "budgetTypeName" : "string",
+      "businessSystemCode" : "string",
+      "checkBudgetMoney" : 0.0,
+      "checked" : true,
+      "children" : [ "..." ],
+      "createBy" : "string",
+      "expenseComCode" : "string",
+      "expenseOrgCode" : "string",
+      "expenseTypeCode" : "string",
+      "groupCode" : "string",
+      "isExempt" : 0,
+      "isGroupOccupy" : 0,
+      "isUniteOrgCode" : 0,
+      "loginId" : "string",
+      "occupyAccountDate" : "yyyy-MM-dd",
+      "occupyApprovalDate" : "yyyy-MM-dd",
+      "occupyBudgetMoney" : 0.0,
+      "occupyBudgetMonth" : "string",
+      "occupyStatus" : 0,
+      "occupySubmitDate" : "yyyy-MM-dd",
+      "occupyWithholdDate" : "yyyy-MM-dd",
+      "pageNum" : 0,
+      "pageSize" : 0,
+      "payBudgetMoney" : 0.0,
+      "projectNo" : "string",
+      "state" : "string",
+      "total" : 0,
+      "transactionDate" : "yyyy-MM-dd",
+      "transactionMonth" : "string",
+      "wapplyDetailId" : "string",
+      "wapplyId" : "string",
+      "wbillTypeCode" : "string",
+      "wbusinessSystemCode" : "string",
+      "wexpenseTypeCode" : "string",
+      "withholdBudgetMoney" : 0.0
+    } ],
+    "businessSystemCode" : "string",
+    "checked" : true,
+    "children" : [ "..." ],
+    "expenseTypeCode" : "string",
+    "loginId" : "string",
+    "operationCode" : "string",
+    "pageNum" : 0,
+    "pageSize" : 0,
+    "state" : "string",
+    "total" : 0
+  } ],
+  "expenseTypeCode" : "string",
+  "loginId" : "string",
+  "operationCode" : "string",
+  "pageNum" : 0,
+  "pageSize" : 0,
+  "state" : "string",
+  "total" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "body" : "object",
+  "statusCode" : "string",
+  "statusCodeValue" : 0
+}
+----
+
+
+
+
+[[_definitions]]
+== 定义
+
+[[_budgetoccupydto]]
+=== BudgetOccupyDTO
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**accItemCode** +
+__可选__|**样例** : `"string"`|string
+|**applyDetailId** +
+__可选__|**样例** : `0`|integer (int64)
+|**applyId** +
+__可选__|**样例** : `0`|integer (int64)
+|**applyState** +
+__可选__|**样例** : `0`|integer (int32)
+|**batchNo** +
+__可选__|**样例** : `"string"`|string
+|**billTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**budgetComCode** +
+__可选__|**样例** : `"string"`|string
+|**budgetCycleCode** +
+__可选__|**样例** : `"string"`|string
+|**budgetItemOne** +
+__可选__|**样例** : `"string"`|string
+|**budgetItemTwo** +
+__可选__|**样例** : `"string"`|string
+|**budgetOrgCode** +
+__可选__|**样例** : `"string"`|string
+|**budgetSubjectCode** +
+__可选__|**样例** : `"string"`|string
+|**budgetSubjectLevel** +
+__可选__|**样例** : `"string"`|string
+|**budgetTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**budgetTypeName** +
+__可选__|**样例** : `"string"`|string
+|**businessSystemCode** +
+__可选__|**样例** : `"string"`|string
+|**checkBudgetMoney** +
+__可选__|**样例** : `0.0`|number
+|**checked** +
+__可选__|**样例** : `true`|boolean
+|**children** +
+__可选__|**样例** : `[ "<<_budgetoccupydto>>" ]`|< <<_budgetoccupydto,BudgetOccupyDTO>> > array
+|**createBy** +
+__可选__|**样例** : `"string"`|string
+|**expenseComCode** +
+__可选__|**样例** : `"string"`|string
+|**expenseOrgCode** +
+__可选__|**样例** : `"string"`|string
+|**expenseTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**groupCode** +
+__可选__|**样例** : `"string"`|string
+|**isExempt** +
+__可选__|**样例** : `0`|integer (int32)
+|**isGroupOccupy** +
+__可选__|**样例** : `0`|integer (int32)
+|**isUniteOrgCode** +
+__可选__|**样例** : `0`|integer (int32)
+|**loginId** +
+__可选__|**样例** : `"string"`|string
+|**occupyAccountDate** +
+__可选__|**样例** : `"yyyy-MM-dd"`|string
+|**occupyApprovalDate** +
+__可选__|**样例** : `"yyyy-MM-dd"`|string
+|**occupyBudgetMoney** +
+__可选__|**样例** : `0.0`|number
+|**occupyBudgetMonth** +
+__可选__|**样例** : `"string"`|string
+|**occupyStatus** +
+__可选__|**样例** : `0`|integer (int32)
+|**occupySubmitDate** +
+__可选__|**样例** : `"yyyy-MM-dd"`|string
+|**occupyWithholdDate** +
+__可选__|**样例** : `"yyyy-MM-dd"`|string
+|**pageNum** +
+__可选__|**样例** : `0`|integer (int32)
+|**pageSize** +
+__可选__|**样例** : `0`|integer (int32)
+|**payBudgetMoney** +
+__可选__|**样例** : `0.0`|number
+|**projectNo** +
+__可选__|**样例** : `"string"`|string
+|**state** +
+__可选__|**样例** : `"string"`|string
+|**total** +
+__可选__|**样例** : `0`|integer (int64)
+|**transactionDate** +
+__可选__|**样例** : `"yyyy-MM-dd"`|string
+|**transactionMonth** +
+__可选__|**样例** : `"string"`|string
+|**wapplyDetailId** +
+__可选__|**样例** : `"string"`|string
+|**wapplyId** +
+__可选__|**样例** : `"string"`|string
+|**wbillTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**wbusinessSystemCode** +
+__可选__|**样例** : `"string"`|string
+|**wexpenseTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**withholdBudgetMoney** +
+__可选__|**样例** : `0.0`|number
+|===
+
+
+[[_budgetoccupypkgdto]]
+=== BudgetOccupyPkgDTO
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**applyDate** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**applyId** +
+__可选__|**样例** : `0`|integer (int64)
+|**billTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**budgetOccupyList** +
+__可选__|**样例** : `[ "<<_budgetoccupydto>>" ]`|< <<_budgetoccupydto,BudgetOccupyDTO>> > array
+|**businessSystemCode** +
+__可选__|**样例** : `"string"`|string
+|**checked** +
+__可选__|**样例** : `true`|boolean
+|**children** +
+__可选__|**样例** : `[ "<<_budgetoccupypkgdto>>" ]`|< <<_budgetoccupypkgdto,BudgetOccupyPkgDTO>> > array
+|**expenseTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**loginId** +
+__可选__|**样例** : `"string"`|string
+|**operationCode** +
+__可选__|**样例** : `"string"`|string
+|**pageNum** +
+__可选__|**样例** : `0`|integer (int32)
+|**pageSize** +
+__可选__|**样例** : `0`|integer (int32)
+|**state** +
+__可选__|**样例** : `"string"`|string
+|**total** +
+__可选__|**样例** : `0`|integer (int64)
+|===
+
+
+[[_interapplicationdto]]
+=== InterApplicationDTO
+请求数据
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**applyDate** +
+__可选__|申请日期 +
+**样例** : `"string"`|string
+|**applyMoney** +
+__可选__|申请单总金额=核销借款金额+付款金额 +
+**样例** : `0.0`|number
+|**applyName** +
+__可选__|合同名称 +
+**样例** : `"string"`|string
+|**applyNo** +
+__可选__|业务单据号 +
+**样例** : `"string"`|string
+|**billTypeCode** +
+__可选__|业务数据单据类型编码 +
+**样例** : `"string"`|string
+|**bizApplicationDetailList** +
+__可选__|业务明细信息 +
+**样例** : `[ "<<_0d46ae1b53ce284e8128cc46095ef3d4>>" ]`|< <<_0d46ae1b53ce284e8128cc46095ef3d4,业务明细信息>> > array
+|**bizApplicationPayeeList** +
+__可选__|收款方信息 +
+**样例** : `[ "<<_109dff274b6440950d6ec4caf6f1817f>>" ]`|< <<_109dff274b6440950d6ec4caf6f1817f,收款方信息>> > array
+|**businessSystemCode** +
+__可选__|业务数据系统来源 +
+**样例** : `"string"`|string
+|**checked** +
+__可选__|**样例** : `true`|boolean
+|**children** +
+__可选__|**样例** : `[ "<<_interapplicationdto>>" ]`|< <<_interapplicationdto,InterApplicationDTO>> > array
+|**comCode** +
+__可选__|申请主体编码 +
+**样例** : `"string"`|string
+|**expectPaymentDate** +
+__可选__|期望付款日期 +
+**样例** : `"string"`|string
+|**expenseTypeCode** +
+__可选__|业务数据费用类型编码 +
+**样例** : `"string"`|string
+|**id** +
+__可选__|业务单id +
+**样例** : `0`|integer (int64)
+|**isAmortization** +
+__可选__|是否摊销(0-否 1-是) +
+**样例** : `0`|integer (int32)
+|**isWithholding** +
+__可选__|是否预提(0-否 1-是) +
+**样例** : `0`|integer (int32)
+|**loginId** +
+__可选__|**样例** : `"string"`|string
+|**operationCode** +
+__可选__|操作码 +
+**样例** : `"string"`|string
+|**orgCode** +
+__可选__|申请部门编号 +
+**样例** : `"string"`|string
+|**pageNum** +
+__可选__|**样例** : `0`|integer (int32)
+|**pageSize** +
+__可选__|**样例** : `0`|integer (int32)
+|**payMoney** +
+__可选__|付款金额 +
+**样例** : `0.0`|number
+|**reMoney** +
+__可选__|核销借款金额 +
+**样例** : `0.0`|number
+|**remark** +
+__可选__|申请备注 +
+**样例** : `"string"`|string
+|**staffId** +
+__可选__|申请人员工号 +
+**样例** : `"string"`|string
+|**state** +
+__可选__|**样例** : `"string"`|string
+|**status** +
+__可选__|申请状态(0-撤销，1-新建) +
+**样例** : `0`|integer (int32)
+|**total** +
+__可选__|**样例** : `0`|integer (int64)
+|===
+
+
+[[_responseentity]]
+=== ResponseEntity
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**body** +
+__可选__|**样例** : `"object"`|object
+|**statusCode** +
+__可选__|**样例** : `"string"`|enum (100 CONTINUE, 101 SWITCHING_PROTOCOLS, 102 PROCESSING, 103 CHECKPOINT, 200 OK, 201 CREATED, 202 ACCEPTED, 203 NON_AUTHORITATIVE_INFORMATION, 204 NO_CONTENT, 205 RESET_CONTENT, 206 PARTIAL_CONTENT, 207 MULTI_STATUS, 208 ALREADY_REPORTED, 226 IM_USED, 300 MULTIPLE_CHOICES, 301 MOVED_PERMANENTLY, 302 FOUND, 302 MOVED_TEMPORARILY, 303 SEE_OTHER, 304 NOT_MODIFIED, 305 USE_PROXY, 307 TEMPORARY_REDIRECT, 308 PERMANENT_REDIRECT, 400 BAD_REQUEST, 401 UNAUTHORIZED, 402 PAYMENT_REQUIRED, 403 FORBIDDEN, 404 NOT_FOUND, 405 METHOD_NOT_ALLOWED, 406 NOT_ACCEPTABLE, 407 PROXY_AUTHENTICATION_REQUIRED, 408 REQUEST_TIMEOUT, 409 CONFLICT, 410 GONE, 411 LENGTH_REQUIRED, 412 PRECONDITION_FAILED, 413 PAYLOAD_TOO_LARGE, 413 REQUEST_ENTITY_TOO_LARGE, 414 URI_TOO_LONG, 414 REQUEST_URI_TOO_LONG, 415 UNSUPPORTED_MEDIA_TYPE, 416 REQUESTED_RANGE_NOT_SATISFIABLE, 417 EXPECTATION_FAILED, 418 I_AM_A_TEAPOT, 419 INSUFFICIENT_SPACE_ON_RESOURCE, 420 METHOD_FAILURE, 421 DESTINATION_LOCKED, 422 UNPROCESSABLE_ENTITY, 423 LOCKED, 424 FAILED_DEPENDENCY, 426 UPGRADE_REQUIRED, 428 PRECONDITION_REQUIRED, 429 TOO_MANY_REQUESTS, 431 REQUEST_HEADER_FIELDS_TOO_LARGE, 451 UNAVAILABLE_FOR_LEGAL_REASONS, 500 INTERNAL_SERVER_ERROR, 501 NOT_IMPLEMENTED, 502 BAD_GATEWAY, 503 SERVICE_UNAVAILABLE, 504 GATEWAY_TIMEOUT, 505 HTTP_VERSION_NOT_SUPPORTED, 506 VARIANT_ALSO_NEGOTIATES, 507 INSUFFICIENT_STORAGE, 508 LOOP_DETECTED, 509 BANDWIDTH_LIMIT_EXCEEDED, 510 NOT_EXTENDED, 511 NETWORK_AUTHENTICATION_REQUIRED)
+|**statusCodeValue** +
+__可选__|**样例** : `0`|integer (int32)
+|===
+
+
+[[_resultofstring]]
+=== ResultOfstring
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|**样例** : `0`|integer (int32)
+|**data** +
+__可选__|**样例** : `"string"`|string
+|**msg** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_0d46ae1b53ce284e8128cc46095ef3d4]]
+=== 业务明细信息
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**applyDate** +
+__可选__|申请日期 +
+**样例** : `"string"`|string (date-time)
+|**applyDetailNo** +
+__可选__|业务明细编号 +
+**样例** : `"string"`|string
+|**applyId** +
+__可选__|申请单主表ID +
+**样例** : `0`|integer (int64)
+|**applyNo** +
+__可选__|业务主信息编号 +
+**样例** : `"string"`|string
+|**billTypeCode** +
+__可选__|业务单据类型编码 +
+**样例** : `"string"`|string
+|**budgetComCode** +
+__可选__|预算公司编码 +
+**样例** : `"string"`|string
+|**budgetItemOne** +
+__可选__|预算事项一 +
+**样例** : `"string"`|string
+|**budgetItemTwo** +
+__可选__|预算事项二 +
+**样例** : `"string"`|string
+|**budgetOrgCode** +
+__可选__|预算部门编号/统筹部门编码 +
+**样例** : `"string"`|string
+|**budgetSubjectCode** +
+__可选__|预算科目编号(三级预算科目) +
+**样例** : `"string"`|string
+|**budgetSubjectLevel** +
+__可选__|预算科目级别 +
+**样例** : `"string"`|string
+|**budgetTypeCode** +
+__可选__|预算类型编码 +
+**样例** : `"string"`|string
+|**businessSystemCode** +
+__可选__|业务系统编号 +
+**样例** : `"string"`|string
+|**cashFlowCode** +
+__可选__|现金流 +
+**样例** : `"string"`|string
+|**checked** +
+__可选__|**样例** : `true`|boolean
+|**children** +
+__可选__|**样例** : `[ "<<_0d46ae1b53ce284e8128cc46095ef3d4>>" ]`|< <<_0d46ae1b53ce284e8128cc46095ef3d4,业务明细信息>> > array
+|**currency** +
+__可选__|币种 +
+**样例** : `"string"`|string
+|**customerId** +
+__可选__|客户编码 +
+**样例** : `"string"`|string
+|**decimalSegment1** +
+__可选__|金额备用字段1 +
+**样例** : `0.0`|number
+|**decimalSegment2** +
+__可选__|金额备用字段2 +
+**样例** : `0.0`|number
+|**decimalSegment3** +
+__可选__|金额备用字段3 +
+**样例** : `0.0`|number
+|**decimalSegment4** +
+__可选__|金额备用字段4 +
+**样例** : `0.0`|number
+|**decimalSegment5** +
+__可选__|金额备用字段5 +
+**样例** : `0.0`|number
+|**expenseComCode** +
+__可选__|费用承担公司编码 +
+**样例** : `"string"`|string
+|**expenseOrgCode** +
+__可选__|受益部门编码 +
+**样例** : `"string"`|string
+|**freedomDimension** +
+__可选__|自由维度编码 +
+**样例** : `"string"`|string
+|**id** +
+__可选__|业务明细id +
+**样例** : `0`|integer (int64)
+|**invoCode** +
+__可选__|发票代码 +
+**样例** : `"string"`|string
+|**invoNo** +
+__可选__|发票号码 +
+**样例** : `"string"`|string
+|**isUniteOrgCode** +
+__可选__|是否统筹部门(0-否,1-是) +
+**样例** : `0`|integer (int32)
+|**loginId** +
+__可选__|**样例** : `"string"`|string
+|**operationCode** +
+__可选__|操作码 +
+**样例** : `"string"`|string
+|**pageNum** +
+__可选__|**样例** : `0`|integer (int32)
+|**pageSize** +
+__可选__|**样例** : `0`|integer (int32)
+|**payBankCount** +
+__可选__|付款银行账号 +
+**样例** : `"string"`|string
+|**priceMoney** +
+__可选__|明细价额 +
+**样例** : `0.0`|number
+|**productLineId** +
+__可选__|产品线编码 +
+**样例** : `"string"`|string
+|**projectNo** +
+__可选__|项目编号 +
+**样例** : `"string"`|string
+|**projectType** +
+__可选__|项目类型编码 +
+**样例** : `"string"`|string
+|**remark** +
+__可选__|明细备注 +
+**样例** : `"string"`|string
+|**state** +
+__可选__|**样例** : `"string"`|string
+|**taxMoney** +
+__可选__|明细税额 +
+**样例** : `0.0`|number
+|**textSegment1** +
+__可选__|文本备用字段1 +
+**样例** : `"string"`|string
+|**textSegment2** +
+__可选__|文本备用字段2 +
+**样例** : `"string"`|string
+|**textSegment3** +
+__可选__|文本备用字段3 +
+**样例** : `"string"`|string
+|**textSegment4** +
+__可选__|文本备用字段4 +
+**样例** : `"string"`|string
+|**textSegment5** +
+__可选__|文本备用字段5 +
+**样例** : `"string"`|string
+|**total** +
+__可选__|**样例** : `0`|integer (int64)
+|**totalMoney** +
+__可选__|报销金额(价税合计) +
+**样例** : `0.0`|number
+|**vendorId** +
+__可选__|供应商账户 +
+**样例** : `"string"`|string
+|**wapplyDetailNo** +
+__可选__|**样例** : `"string"`|string
+|**wapplyNo** +
+__可选__|**样例** : `"string"`|string
+|**wbillTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**wbusinessSystemCode** +
+__可选__|**样例** : `"string"`|string
+|**wexpenseTypeCode** +
+__可选__|**样例** : `"string"`|string
+|**withholdingAdjustTerms** +
+__可选__|预提(摊销)调整周期 +
+**样例** : `0`|integer (int32)
+|**withholdingStartDate** +
+__可选__|预提(摊销)开始日期 +
+**样例** : `"string"`|string (date-time)
+|**withholdingTerms** +
+__可选__|预提（摊销）周期数 +
+**样例** : `0`|integer (int32)
+|**withholdingTotalAdjustMoney** +
+__可选__|预提(摊销)调整金额(预提：每月预提金额；摊销：摊销总额) +
+**样例** : `0.0`|number
+|**withholdingTotalMoney** +
+__可选__|预提(摊销)金额(预提：每月预提金额；摊销：摊销总额) +
+**样例** : `0.0`|number
+|===
+
+
+[[_109dff274b6440950d6ec4caf6f1817f]]
+=== 收款方信息
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**applyId** +
+__可选__|业务单主表ID +
+**样例** : `0`|integer (int64)
+|**checked** +
+__可选__|**样例** : `true`|boolean
+|**children** +
+__可选__|**样例** : `[ "<<_109dff274b6440950d6ec4caf6f1817f>>" ]`|< <<_109dff274b6440950d6ec4caf6f1817f,收款方信息>> > array
+|**loginId** +
+__可选__|**样例** : `"string"`|string
+|**pageNum** +
+__可选__|**样例** : `0`|integer (int32)
+|**pageSize** +
+__可选__|**样例** : `0`|integer (int32)
+|**payeeAccountName** +
+__可选__|收款方账户名 +
+**样例** : `"string"`|string
+|**payeeBankAccount** +
+__可选__|收款方账户号 +
+**样例** : `"string"`|string
+|**payeeBankCode** +
+__可选__|收款方开户行号(银行联行号)【根据CBS接口】 +
+**样例** : `"string"`|string
+|**payeeMoney** +
+__可选__|收款金额 +
+**样例** : `0.0`|number
+|**state** +
+__可选__|**样例** : `"string"`|string
+|**total** +
+__可选__|**样例** : `0`|integer (int64)
+|===
+
+
+
+
+
