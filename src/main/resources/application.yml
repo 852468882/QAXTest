@@ -12,9 +12,14 @@ spring:
   # 数据源
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.249.47.167:3306/fmsmysqldev02
-    username: fmsmysqldev
-    password: AH9CZJ4nTwHsXE_4ay
+    #开发
+    #url: jdbc:mysql://10.249.47.167:3306/fmsmysqldev02?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    #username: fmsmysqldev
+    #password: AH9CZJ4nTwHsXE_4ay
+    #测试
+    url: jdbc:mysql://10.249.47.156:3306/fmsmysqlqas02?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    username: fmsmysqlqas
+    password: 9KdMhE9N98SdK4tFgB
 
   # redis
   redis:
